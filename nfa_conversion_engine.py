@@ -1,5 +1,3 @@
-from operator import le
-from os import stat
 import sys
 f=open(sys.argv[1], 'r')
 nfa_states=[]
@@ -35,7 +33,7 @@ while line:=f.readline():   #cat timp mai sunt linii de citit
             if (t[0], t[1]) in nfa_transitions:
                 nfa_transitions[(t[0], t[1])].append(t[2]) 
             else:
-                nfa_transitions[(t[0], t[1])]=[t[2]]    #pentru formatul din pdf, t[0] si t[2] sunt stari, iar t[1] e litera din alfabet
+                nfa_transitions[(t[0], t[1])]=[t[2]]
 print("Sigma:")
 for letter in alphabet:
     print("\tletter", letter, sep='')
